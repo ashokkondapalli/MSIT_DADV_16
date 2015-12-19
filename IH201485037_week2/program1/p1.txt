@@ -1,0 +1,16 @@
+inputdata=read.csv('F:\\MSIT\\Data mining\\Exam\\bupa.data.txt');
+updateddata=inputdata[,1:6];
+cluster = kmeans(updateddata,5,iter.max=50,nstart=1,algorithm=c("Lloyd"),trace=FALSE);
+library(cluster);
+clusplot(updateddata,cluster$cluster,color=TRUE,shade=TRUE);
+cluster1=inputdata[cluster$cluster==1,]
+nrow(cluster1)
+[1] 142
+train1=cluster2[1:71,]
+test1=cluster2[11:77,]
+result2=knn(train2[,1:6],test2[,1:6],train1[,7],k=5)
+result2=knn(train2[,1:6],test2[,1:6],train2[,7],k=5)
+mean(result2!=cluster2[,7])*100
+
+
+
